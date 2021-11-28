@@ -4,9 +4,13 @@
 
 int main() {
 
-    GradeBook gradeBook1("CS101 Introduction to Programming in C++");
-    GradeBook gradeBook2("CS102 C++ Data Structures");
+    GradeBook myGradeBook("CS101 C++ Programming");
+    myGradeBook.displayMessage();
 
+    myGradeBook.determineClassAvarage();
+
+
+   /*
     std::cout << "gradeBook1 initial course name is : "
     << gradeBook1.getCourseName()
     << "\ngradeBook2 initial coursename is : "
@@ -18,6 +22,6 @@ int main() {
               << gradeBook1.getCourseName()
               << "\ngradeBook2 coursename is : "
               << gradeBook2.getCourseName() << std::endl;
-
+  */
     return 0;
 }

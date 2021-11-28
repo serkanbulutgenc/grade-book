@@ -12,6 +12,7 @@ public:
     explicit GradeBook(std::string);
     void setCourseName(std::string);
     std::string getCourseName() const;
+    void determineClassAvarage() const;
     void displayMessage() const;
 
 private:
