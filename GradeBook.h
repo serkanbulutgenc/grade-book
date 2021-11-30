@@ -14,9 +14,16 @@ public:
     std::string getCourseName() const;
     void determineClassAvarage() const;
     void displayMessage() const;
+    void inputGrades();
+    void displayGradeReport() const;
 
 private:
     std::string courseName;
+    unsigned int aCount;
+    unsigned int bCount;
+    unsigned int cCount;
+    unsigned int dCount;
+    unsigned int eCount;
 };
 
 
