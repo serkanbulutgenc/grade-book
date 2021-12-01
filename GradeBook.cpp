@@ -6,8 +6,7 @@
 #include <iomanip>
 #include "GradeBook.h"
 
-GradeBook::GradeBook(std::string name):
-aCount(0),bCount(0),cCount(0),dCount(0),eCount(0)
+GradeBook::GradeBook(std::string name)
 {
     setCourseName(name);
 }
@@ -29,47 +28,30 @@ std::string GradeBook::getCourseName() const {
     return courseName;
 }
 
-void GradeBook::inputGrades(){
-  int grade;
-  std::cout << "Enter the letter grades."<< std::endl
-  << "Enter the EOF character to end input"<< std::endl;
+int GradeBook::maximum(int x, int y, int z) const{
+  int maximumNumber = x;
 
-  while((grade = std::cin.get()) != EOF ){
-    switch(grade){
-      case 'a':case 'A':
-        ++aCount;
-        break;
-      case 'b': case 'B':
-      ++bCount;
-      break;
-      case 'c': case 'C':
-      ++cCount;
-      break;
-      case 'd': case 'D':
-      ++dCount;
-      break;
-      case '\n': case '\t': case ' ':
-      break;
-      case 'e': case 'E':
-      ++eCount;
-      break;
-      default:
-      std::cout << "Incorrect letter grade entered."
-      << "Enter a new grade "<< std::endl;
-      break;
-    }//End of switch case
-  }//End of while 
+  if(y > maximumNumber) maximumNumber = y;
+
+  if(z > maximumNumber) maximumNumber = z;
+
+  return maximumNumber;
+}
+
+void GradeBook::inputGrades(){
+  int grade1;
+  int grade2;
+  int grade3;
+
+  std::cout << "Enter three grade : ";
+  std::cin >> grade1 >> grade2 >> grade3;
+
+  maximumGrade = maximum(grade1, grade2, grade3);
 
 }//End of inputGrades
 
 void GradeBook::displayGradeReport()const{
-  std::cout << "\n\nNumber of students who received each letter grade :"
-  << "\nA:" << aCount 
-  << "\nB:" << bCount
-  << "\nC:" << cCount
-  << "\nD:" << dCount
-  << "\nE:" << eCount
-  << std::endl;
+  std::cout << "Maximum of grades entered: " << maximumGrade <<std::endl;
 }
 
 void GradeBook::displayMessage() const {
